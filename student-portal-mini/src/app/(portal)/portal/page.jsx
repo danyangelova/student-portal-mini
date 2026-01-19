@@ -1,3 +1,7 @@
-export default function PortalHomePage() {
-    return <main>Portal Home page</main>
+export default function DashboardPage() {
+   return (
+      <main>
+         <h1>Dashboard</h1>
+      </main>
+   );
 }
