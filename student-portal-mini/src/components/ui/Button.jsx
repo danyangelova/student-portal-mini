@@ -1,5 +1,7 @@
-export default function Button({ variant = "default", ...props }) {
+export default function Button(props) {
    let className = "btn";
+
+   const variant = props.variant ?? "default";
 
    if (variant === "primary") {
       className = "btn btn-primary";
