@@ -1,14 +1,17 @@
-export default function Button(props) {
-   let className = "btn";
+export default function Button({ variant, children, ...rest }) {
+  let className = "btn";
 
-   const variant = props.variant ?? "default";
+  if (variant === "primary") className = "btn btn-primary";
+  if (variant === "danger") className = "btn btn-danger";
 
-   if (variant === "primary") {
-      className = "btn btn-primary";
-   }
-
-   if (variant === "danger") {
-      className = "btn btn-danger";
-   }
-   return <button className={className} {...props}></button>;
+  return (
+    <button className={className} {...rest}>
+      {children}
+    </button>
+  );
 }
+
+
+{/* <Button>Save</Button> */}
+{/* <Button variant="primary">Save</Button> */}
+{/* <Button variant="danger" onClick={handleDelete}>Delete</Button> */}
